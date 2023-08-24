@@ -582,6 +582,11 @@ var _routesDefault = parcelHelpers.interopDefault(_routes);
 const root = document.querySelector("#root");
 root.append(new (0, _appDefault.default)().el);
 (0, _routesDefault.default)();
+(async ()=>{
+    const res = await fetch("/api/test");
+    const json = await res.json();
+    console.log(json);
+})();
 
 },{"./App":"2kQhy","./routes":"3L9mC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2kQhy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
