@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.9.3"
+    "parcel": "^2.9.3",
+    "vercel": "^32.1.0"
   },
   "dependencies": {
-    "@parcel/transformer-js": "^2.9.3"
+    "@parcel/transformer-js": "^2.9.3",
+    "node-fetch": "^2.7.0"
   }
 }
