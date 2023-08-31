@@ -1,6 +1,16 @@
 import { Store } from "../core/heropy";
 
-const store = new Store({
+export interface State {
+  searchText: string
+  page: number
+  pageMax: number
+  movies: any[]
+  movie: any
+  loading: boolean
+  message: string
+}
+
+const store = new Store<State>({
   searchText: '',
   page: 1,
   pageMax: 1,
@@ -12,7 +22,7 @@ const store = new Store({
 
 export default store
 
-export const searchMovies = async page => {
+export const searchMovies = async (page: number) => {
 
   // 로딩애니메이션
   store.state.loading = true
@@ -50,7 +60,7 @@ export const searchMovies = async page => {
 }
 
 // 영화 상세정보 가져오는 함수
-export const getMovieDetails = async id => {
+export const getMovieDetails = async (id: string) => {
   try{
     // const res = await fetch(`https://omdbapi.com?apikey=e066e169&i=${id}&plot=full`)
     const res = await fetch('/api/movie', {
