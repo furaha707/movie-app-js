@@ -5,7 +5,7 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "strict": true
+    "strict": true,
   },
   "include": [
     "src/**/*.ts",

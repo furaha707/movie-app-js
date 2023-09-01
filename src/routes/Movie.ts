@@ -1,4 +1,4 @@
-import { Component } from "../core/heropy";
+import { Component } from '../core/heropy';
 import movieStore, { getMovieDetails } from '../store/movie'
 
 export default class Movie extends Component {
@@ -18,7 +18,6 @@ export default class Movie extends Component {
     console.log(movieStore.state.movie)
     const { movie } = movieStore.state
     const bigPoster = movie.Poster.replace('SX300', 'SX700')
-
 
     this.el.innerHTML = /* html */ `
       <div class="poster" style="background-image:url(${bigPoster})"></div>

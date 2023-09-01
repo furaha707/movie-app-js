@@ -1,11 +1,50 @@
 import { Store } from "../core/heropy";
 
+export interface SimpleMovie {
+  Title: string
+  Year: string
+  imdbID: string
+  Type: string
+  Poster: string
+}
+
+interface DetailedMovie {
+  Title: string
+  Year: string
+  Rated: string
+  Released: string
+  Runtime: string
+  Genre: string
+  Director: string
+  Writer: string
+  Actors: string
+  Plot: string
+  Language: string
+  Country: string
+  Awards: string
+  Poster: string
+  Ratings: {
+    Source: string
+    Value: string
+  }[]
+  Metascore: string
+  imdbRating: string
+  imdbVotes: string
+  imdbID: string
+  Type: string
+  DVD: string
+  BoxOffice: string
+  Production: string
+  Website: string
+  Response: string
+}
+
 export interface State {
   searchText: string
   page: number
   pageMax: number
-  movies: any[]
-  movie: any
+  movies: SimpleMovie[]
+  movie: DetailedMovie
   loading: boolean
   message: string
 }
@@ -15,7 +54,7 @@ const store = new Store<State>({
   page: 1,
   pageMax: 1,
   movies: [],
-  movie: {},
+  movie: {} as DetailedMovie,
   loading: false,
   message: 'Search for the movie title!'
 })
